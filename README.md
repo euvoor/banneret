@@ -14,9 +14,9 @@ The evidence on multi-agent coding is narrower than the hype: parallel writers d
 - **Verifiers** (fan-out, where the spend pays): falsifiable briefs in, `CONFIRMED / REFUTED / PLAUSIBLE-UNVERIFIED` verdicts out, with evidence, a "checked and not flagged" calibration section, and a falsification plan for anything unverifiable locally. Includes a **cold-reader** that tests docs by acting on them with no other context.
 - **A mandatory integration pass**, and a per-phase budget with a hard stop line.
 
-Verification briefs and reports name the exact commit and any external spec/fixture inputs. Uncommitted work needs its own committed snapshot; a HEAD hash alone does not identify a dirty tree. Later changes make earlier results stale for the new code and require fresh verification. This is part of the agent contracts and playbook, not an automatic check performed by the compiler.
+Verification is pinned: briefs and reports name the exact commit (plus hashes for inputs outside it), uncommitted work gets a committed snapshot first, and any later change makes earlier verdicts stale until re-verified. This is a contract the agents follow, not an automatic Git gate enforced by the compiler.
 
-The playbook grew out of real trial runs (three so far), with later refinements from review. Its budget guidance includes the observed constants (fan-out phases run ~3× naive estimates).
+Every rule in the playbook traces to a real trial run (three so far), not to a diagram. The playbook's budget guidance includes the observed constants (fan-out phases run ~3× naive estimates).
 
 ## Install & use
 
